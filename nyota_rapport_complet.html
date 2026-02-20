@@ -1,0 +1,355 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rapport NYOTA Personality</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px 20px;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #0066FF 0%, #00BFFF 100%);
+            color: white;
+            padding: 50px 40px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 42px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .header p {
+            font-size: 18px;
+            opacity: 0.95;
+        }
+        
+        .content {
+            padding: 50px 40px;
+        }
+        
+        .section {
+            margin-bottom: 50px;
+        }
+        
+        .section-title {
+            font-size: 28px;
+            color: #0066FF;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #0066FF;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .icon {
+            font-size: 32px;
+        }
+        
+        .synthese {
+            background: linear-gradient(135deg, #E0F2FE 0%, #BAE6FD 100%);
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 5px solid #0066FF;
+            margin-bottom: 30px;
+        }
+        
+        .score-global {
+            font-size: 48px;
+            font-weight: 700;
+            color: #0066FF;
+            margin: 15px 0;
+        }
+        
+        .card {
+            background: #F9FAFB;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-left: 5px solid #10B981;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .card-weak {
+            border-left-color: #EF4444;
+        }
+        
+        .card-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #1F2937;
+            margin-bottom: 10px;
+        }
+        
+        .card-score {
+            font-size: 32px;
+            font-weight: 700;
+            color: #0066FF;
+            margin-bottom: 15px;
+        }
+        
+        .card-description {
+            color: #4B5563;
+            line-height: 1.8;
+            margin-bottom: 8px;
+        }
+        
+        .card-description strong {
+            color: #1F2937;
+        }
+        
+        .recommendation {
+            background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 15px;
+            border-left: 5px solid #F59E0B;
+        }
+        
+        .recommendation-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #92400E;
+            margin-bottom: 10px;
+        }
+        
+        .recommendation-text {
+            color: #78350F;
+            line-height: 1.7;
+        }
+        
+        .tips {
+            background: #DBEAFE;
+            border-radius: 12px;
+            padding: 25px;
+            margin-top: 30px;
+        }
+        
+        .tips-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #1E40AF;
+            margin-bottom: 20px;
+        }
+        
+        .tips ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .tips li {
+            padding: 12px 0;
+            color: #1E3A8A;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        
+        .tips li:before {
+            content: "✓";
+            color: #10B981;
+            font-weight: bold;
+            display: inline-block;
+            width: 1.5em;
+            font-size: 20px;
+        }
+        
+        .footer {
+            background: #1F2937;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            font-size: 14px;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .container {
+                box-shadow: none;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header {
+                padding: 30px 20px;
+            }
+            .header h1 {
+                font-size: 32px;
+            }
+            .content {
+                padding: 30px 20px;
+            }
+            .section-title {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📊 RAPPORT NYOTA PERSONALITY</h1>
+            <p>Analyse Complète de Votre Profil de Personnalité</p>
+        </div>
+        
+        <div class="content">
+            <!-- SYNTHÈSE GLOBALE -->
+            <div class="section">
+                <div class="synthese">
+                    <h2 style="color: #0066FF; margin-bottom: 15px;">Synthèse Globale</h2>
+                    <div class="score-global">70.4<span style="font-size: 24px;">/100</span></div>
+                    <p style="font-size: 18px; color: #1F2937; line-height: 1.8;">
+✅ <strong>Profil équilibré</strong> avec des aptitudes marquées dans plusieurs domaines.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- POINTS FORTS -->
+            <div class="section">
+                <h2 class="section-title">
+                    <span class="icon">✅</span>
+                    Vos Points Forts
+                </h2>
+
+                <div class="card">
+                    <div class="card-title">1. Alignement stratégique</div>
+                    <div class="card-score">76.8/100</div>
+
+                    <p class="card-description">→ Vision stratégique claire et cohérence décisionnelle.</p>
+                    <p class="card-description">→ Excellente projection dans le futur.</p>
+                    <p class="card-description">→ Alignement fort entre actions présentes et objectifs futurs.</p>
+
+                </div>
+
+                <div class="card">
+                    <div class="card-title">2. Ouverture & Curiosité</div>
+                    <div class="card-score">75.0/100</div>
+
+                    <p class="card-description">→ Vous excellez dans l'exploration intellectuelle et l'innovation.</p>
+                    <p class="card-description">→ Capacité à remettre en question les méthodes établies.</p>
+                    <p class="card-description">→ Curiosité naturelle et goût pour l'apprentissage continu.</p>
+
+                </div>
+
+                <div class="card">
+                    <div class="card-title">3. Influence & Présence</div>
+                    <div class="card-score">75.0/100</div>
+
+                    <p class="card-description">→ Grande aisance relationnelle et capacité à convaincre.</p>
+                    <p class="card-description">→ Présence naturelle dans les interactions de groupe.</p>
+                    <p class="card-description">→ Leadership assertif et visibilité sociale marquée.</p>
+
+                </div>
+
+            </div>
+            
+            <!-- AXES DE DÉVELOPPEMENT -->
+            <div class="section">
+                <h2 class="section-title">
+                    <span class="icon">📈</span>
+                    Axes de Développement
+                </h2>
+
+                <div class="card card-weak">
+                    <div class="card-title">1. Coopération</div>
+                    <div class="card-score">71.4/100</div>
+
+                    <p class="card-description">→ Travailler l'empathie et la capacité à collaborer.</p>
+                    <p class="card-description"><strong>💡 Actions :</strong> Pratiquer l'écoute active, rechercher activement les feedbacks.</p>
+
+                </div>
+
+                <div class="card card-weak">
+                    <div class="card-title">2. Discipline & Fiabilité</div>
+                    <div class="card-score">66.7/100</div>
+
+                    <p class="card-description">→ Renforcer la rigueur et la méthodologie de travail.</p>
+                    <p class="card-description"><strong>💡 Actions :</strong> Utiliser des outils de gestion du temps, établir des routines claires.</p>
+
+                </div>
+
+                <div class="card card-weak">
+                    <div class="card-title">3. Résilience & Stress</div>
+                    <div class="card-score">48.2/100</div>
+
+                    <p class="card-description">→ Renforcer la gestion du stress et la stabilité émotionnelle.</p>
+                    <p class="card-description"><strong>💡 Actions :</strong> Techniques de relaxation, sport régulier, accompagnement si besoin.</p>
+
+                </div>
+
+            </div>
+            
+            <!-- RECOMMANDATIONS DE POSTES -->
+            <div class="section">
+                <h2 class="section-title">
+                    <span class="icon">🎯</span>
+                    Recommandations de Postes
+                </h2>
+
+                <div class="recommendation">
+                    <div class="recommendation-title">• RESPONSABLE COMMERCIAL / BUSINESS DEVELOPER</div>
+                    <div class="recommendation-text">Votre aisance relationnelle et capacité à convaincre sont des atouts majeurs.</div>
+                </div>
+
+                <div class="recommendation">
+                    <div class="recommendation-title">• CONSULTANT / COACH</div>
+                    <div class="recommendation-text">Capacité à explorer, innover et influencer positivement les autres.</div>
+                </div>
+
+                <div class="recommendation">
+                    <div class="recommendation-title">• DIRECTEUR OPÉRATIONNEL / COO</div>
+                    <div class="recommendation-text">Motivation élevée et style d'action adapté pour diriger les opérations.</div>
+                </div>
+
+            </div>
+            
+            <!-- CONSEILS -->
+            <div class="tips">
+                <div class="tips-title">💼 Conseils pour Valoriser Votre Profil</div>
+                <ul>
+                    <li>Mettez en avant vos 3 points forts dans vos candidatures et entretiens</li>
+                    <li>Travaillez activement vos axes de développement (formations, coaching)</li>
+                    <li>Recherchez des environnements alignés avec votre profil naturel</li>
+                    <li>Demandez régulièrement du feedback pour progresser continuellement</li>
+                    <li>Restez authentique : votre profil unique est votre plus grande force</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>© 2026 NYOTA Personality - Tous droits réservés</p>
+            <p style="margin-top: 10px; opacity: 0.8;">Rapport généré automatiquement</p>
+        </div>
+    </div>
+</body>
+</html>
